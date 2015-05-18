@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>ngMap Tests</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="bower_components/angularjs/angular.js"></script>
+    <script src="bower_components/lodash/dist/lodash.js"></script>
+    <script src='bower_components/angular-google-maps/dist/angular-google-maps.js'></script>
+    
+    <script src="angularGoogleMapsTestApp.js"></script>
+    <style>
+        .angular-google-map-container { height: 400px; }
+
+    </style>
+</head>
+<body ng-app="angularGoogleMapsTestApp">
+    <h3>Angular Google Maps Test</h3>
+
+    <p>Test showing adding and removing markers on Angular Google Maps
+        (from: <a href="http://angular-ui.github.io/angular-google-maps/#!/">
+            Angular Google Maps</a>)</p>
+            <p>I don't understand how to successfully add and remove markers from the model
+            for this library - even though 3 markers are added, only one is being 
+            displayed. I also struggled to work out a way to add markers dynamically. Markers initially
+            added display fine, but the approach to get the map to fresh seems to involve a few
+            steps that I couldn't get working successfully.</p>
+    <div ng-controller="angularGoogleMapCtrl">
+        <input ng-click="toggleAddAndRemoveMarkers()" type="button" value="Show Add and Remove Markers">
+        
+        <div style="height:500px">
+            <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+                <ui-gmap-markers models="markers" coords="'self'" modelsbyref="false"/>
+            </ui-gmap-google-map>
+        </div>
+
+    </div>
+
+</body>
+</html>
