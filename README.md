@@ -1,7 +1,7 @@
 AngularJSGoogleMapsExamples
 ===========================
 In looking for a AngularJS library for Google Maps API that I could use in my app, I started looking
-at Angualr Google Maps (http://angular-ui.github.io/angular-google-maps/#!/) but struggled to work with 
+at Angular Google Maps (http://angular-ui.github.io/angular-google-maps/#!/) but struggled to work with 
 the api to add markers to the map dynamically and get the map to refresh. 
 
 After spending a few hours to try and get the API to do what I wanted, I looked at other alternatives, and 
