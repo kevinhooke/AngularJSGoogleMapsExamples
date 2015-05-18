@@ -6,7 +6,7 @@ the api to add markers to the map dynamically and get the map to refresh.
 
 After spending a few hours to try and get the API to do what I wanted, I looked at other alternatives, and 
 found ngMap (https://ngmap.github.io/) which provides a simpler approach with the majority of what you 
-need decalritively, and little need for additional JavaScript code.
+need declaritively with little need for additional JavaScript code.
 
 This app has two pages, one that uses Angular Google Maps (AngularGoogleMapsTest.html), and one using
 ngMap (ngMapTest.html), to create and display markers on a map.
