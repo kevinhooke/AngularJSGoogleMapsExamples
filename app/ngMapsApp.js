@@ -5,26 +5,38 @@ var app = angular.module('ngMapTestApp', ['ngMap']);
 app.controller('ngMapCtrl', function ($scope) {
 
     //one initial marker
-    var marker1 = {lat: 37.7699298, lng: -122.44};
-    var marker2 = {lat: 37.7699298, lng: -122.45};
-    var marker3 = {lat: 37.7699298, lng: -122.46};
+    var marker1 = {lat: 37.769, lng: -122.44};
+
+    var markersDisplayed = 0;
+    var markersAdded = 0;
+    var maxMarkersToDisplay = 3;
+    var increment = 0.02;
+    var startingLongitude = -122.44;
+    var startingLatitude = 37.769;
 
     $scope.positions = [];
-    $scope.positions[0] = marker1;
-    $scope.positions[1] = marker2;
-    $scope.positions[2] = marker3;
+
+    $scope.removeMarkers = function () {
+        $scope.positions = [];
+        markersDisplayed = 0;
+        markersAdded = 0;
+    }
 
     $scope.toggleAddAndRemoveMarkers = function () {
-        if ($scope.positions.length > 0) {
-            $scope.positions = [];
-        }
-        else {
-            $scope.positions[0] = marker1;
-            $scope.positions[1] = marker2;
-            $scope.positions[2] = marker3;
-        }
-        ;
 
-    };
+        //if 3 displayed already, pop first one off of the array
+        if(markersDisplayed >= 3) {
+            markersDisplayed--;
+            $scope.positions.shift();
+        }
+        //addd a new position
+        markersDisplayed++;
+        $scope.positions.push(
+            { 
+                lat: startingLatitude, 
+                lng: (startingLongitude + (markersAdded * increment))
+            });
+        markersAdded++;
+        };
 
 });

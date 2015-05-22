@@ -14,7 +14,8 @@
     <p>Test showing adding and removing markers on ngMap 
         (from: <a href="https://ngmap.github.io">https://ngmap.github.io/</a>)</p>
     <div ng-controller="ngMapCtrl">
-        <input ng-click="toggleAddAndRemoveMarkers()" type="button" value="Show Add and Remove Markers">
+        <input ng-click="toggleAddAndRemoveMarkers()" type="button" value="Add/Remove Next Marker">
+        <input ng-click="removeMarkers()" type="button" value="Remove all markers">
         <!-- To set style properties of map, eg height, set on map and style the parent
         container -->
         <div style="height:500px">
